@@ -39,7 +39,8 @@ class Program
             //Tries to parse the userinput to a given double
             if (double.TryParse(userInput, out double number))
             {
-                Console.Write("Enter an operation  + ,  - ,  * ,  / or write banan \n");
+                Console.Write("Enter an operation  + ,  - ,  * ,  /  \n");
+                Console.WriteLine("You can also try: 'circle' or 'banan'");
                 string operation = Console.ReadLine();
 
                 //Switch case instead of if statements.
@@ -70,6 +71,11 @@ class Program
                     case "banan":
                         bananClass.BananStart();
                         break;
+
+                    case "circle":
+                        CalculateData.Circle();
+                        break;
+
                     default:
                         //If user inputs anything that does not fit it will break with the given error message
                         Console.WriteLine("Invalid operation. Please enter +, -, *, or /.");
