@@ -4,10 +4,14 @@ class Program
 {
     static void Main(string[] args)
     {
-        //this clears the console when the user makes an error.
+        //this should clear the console when the user makes an error.
         Console.Clear();
         //Intiatiates the object.
         CalculateData calculator = new CalculateData();
+        BananClass bananClass = new BananClass();
+        
+
+
         //Depending on the console size this might not work. Forcing console window size only works on Windows sadly.
         Console.WriteLine("╔══════════════════════════════════════╗");
         Console.WriteLine("║      Ultimate Console Calculater     ║");
@@ -35,7 +39,7 @@ class Program
             //Tries to parse the userinput to a given double
             if (double.TryParse(userInput, out double number))
             {
-                Console.Write("Enter an operation  + ,  - ,  * ,  / : \n");
+                Console.Write("Enter an operation  + ,  - ,  * ,  / or write banan \n");
                 string operation = Console.ReadLine();
 
                 //Switch case instead of if statements.
@@ -61,6 +65,10 @@ class Program
                         Console.WriteLine("You choice is division");
                         calculator.Division(number);
                         Console.Clear();
+                        break;
+
+                    case "banan":
+                        bananClass.BananStart();
                         break;
                     default:
                         //If user inputs anything that does not fit it will break with the given error message
